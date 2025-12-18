@@ -27,3 +27,28 @@ function getRandomBoolean() {
     return Math.random() < 0.5;
 }
 
+
+// GÉNÉRATION DE COORDONNÉES
+function generateRandomCoordinates(center = DEFAULT_CENTER, variance
+   = COORDINATE_VARIANCE) {
+    return {
+      latitude: center.lat + (Math.random() - 0.5) * variance,
+      longitude: center.lng + (Math.random() - 0.5) * variance
+    };
+}
+
+
+// GÉNÉRATION D'IDENTIFIANT
+function generateFeuId(index) {
+    return ID_PREFIX + String(index + 1).padStart(ID_PADDING, "0");
+}
+
+
+// GÉNÉRATION DES PROPRIÉTÉS D'IDENTIFICATION
+function createIdentificationProperties(index, type) {
+    return {
+      id: generateFeuId(index),
+      nom: `Feu Aléatoire #${index + 1}`,
+      type: type
+    };
+}

@@ -52,3 +52,42 @@ function createIdentificationProperties(index, type) {
       type: type
     };
 }
+
+
+// GÉNÉRATION DES PROPRIÉTÉS DE LOCALISATION
+function createLocationProperties(index) {
+    const coordinates = generateRandomCoordinates();
+    return {
+      ...coordinates,
+      owner: getRandomChoice(companies),        
+   
+      pays: getRandomChoice(paysList),         
+   
+      posPhysique: `Emplacement ${index + 1}`
+    };
+}
+
+
+// GÉNÉRATION DES PROPRIÉTÉS TECHNIQUES
+function createTechnicalProperties() {
+    return {
+      tension_service: getRandomChoice(tensions),  
+  
+      tension_alim: getRandomChoice(tensions),     
+  
+      serie: "C" + getRandomInt(RANGES.serie.min, RANGES.serie.max),
+      mode: getRandomChoice(modes),                
+  
+      tableCycle: getRandomInt(RANGES.tableCycle.min,RANGES.tableCycle.max)
+    };
+}
+
+
+// GÉNÉRATION DES PROPRIÉTÉS D'ÉTAT
+function createStateProperties(stateCount) {
+    return {
+      etat_courant: getRandomInt(0, stateCount - 1),
+      cycles_count: getRandomInt(RANGES.cyclesCount.min,RANGES.cyclesCount.max),
+      dernier_changement: new Date().toISOString()
+    };
+}

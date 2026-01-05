@@ -1,9 +1,7 @@
-jest.mock("./bankDAO");
+test("getBalance retourne le solde", () => {
+  bankDAO.retrieveBalance.mockReturnValue(200);
 
-const bankDAO = require("./bankDAO");
-const bank = require("./bank");
+  const balance = bank.getBalance("ACC1");
 
-test("getBalance appelle retrieveBalance", () => {
-  bank.getBalance();
-  expect(bankDAO.retrieveBalance).toHaveBeenCalled();
+  expect(balance).toBe(200);
 });

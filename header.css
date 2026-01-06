@@ -1,0 +1,32 @@
+
+:root {
+  --space-fine: 0.5rem;
+  --space-medium: 1rem;
+  --space-large: 2rem;
+}
+
+
+header {
+  
+  color: green;
+
+  
+  border: 2px solid crimson;
+
+  
+  font-size: clamp(20px, 48px, 80px);
+
+  
+  padding: var(--space-medium);
+  margin-bottom: var(--space-large);
+
+  
+  text-align: left;
+
+  
+  height: 10rem;
+
+  
+  display: flex;
+  align-items: center;
+}

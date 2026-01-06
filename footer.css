@@ -1,0 +1,14 @@
+
+footer {
+  
+  color: green;
+
+ 
+  border: 2px solid crimson;
+
+  
+  font-size: 12px;
+
+  padding: var(--space-fine);
+  margin-bottom: var(--space-large);
+}

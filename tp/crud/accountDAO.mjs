@@ -17,5 +17,12 @@ export const accountDAO = {
       console.log(`Compte avec l'ID ${account.id} non trouvé.`);
     }
   },
-  retrieveAccount(id) {},
+  retrieveAccount(id) {
+    const account = ACCOUNT_LIST.find(a => a.id === id);
+    if (account) {
+      const { lastName, firstName, ...rest } = account;
+      return { ...rest, name: `${firstName} ${lastName}` };
+    }
+    return null;
+  },
 };

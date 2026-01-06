@@ -13,3 +13,7 @@ accountService.saveAccount(secondAccountId, "ALI", "anas");
 
 const updatedAccountList = accountService.getAccountList();
 console.log("Liste des comptes après mise à jour :", updatedAccountList);
+
+
+const retrievedAccount = accountService.getAccount(secondAccountId);
+console.log("Compte récupéré :", retrievedAccount);

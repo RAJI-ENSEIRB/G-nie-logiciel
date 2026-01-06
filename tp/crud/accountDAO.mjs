@@ -5,7 +5,9 @@ export const accountDAO = {
     ACCOUNT_LIST.push(account);
     console.log("Contenu de la BDD :", ACCOUNT_LIST);
   },
-  retrieveAccountList() {},
+  retrieveAccountList() {
+    return ACCOUNT_LIST.map(({creationDate, ...account}) => account);
+  },
   updateAccount(account) {},
   retrieveAccount(id) {},
 };
